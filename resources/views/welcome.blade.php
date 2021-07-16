@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    @include('sweetalert::alert')
     <div class="container-main">
         {{-- <h2>Selecione el candidato (a) de su preferencia haciendo Click en la imagen.</h2> --}}
 
@@ -109,7 +110,14 @@
                 </div>
             </div>
         </div>
+        <footer style="position: absolute; color: #fff;bottom: 30px; background-color: rgba(0, 0,0, 0.89) ; border-radius: 10px; padding: 10px; justify-content: center;align-items: center;display: flex;">
+
+            <p style="margin: 0">Todos los derechos reservados 2021. © Fundación Fiestas Franciscanas de Quibdó
+                Tema de Colorlib. Funciona . Desarrollador Jhon Heiler 323 4960276</p>
+
+        </footer>
     </div>
+
 </body>
 
 </html>

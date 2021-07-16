@@ -78,3 +78,34 @@ form{
 span{
     font-size: 22px;
 }
+
+.admin{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("../images/fondoAdmin.jpeg");
+    background-size: cover;
+}
+.logo{
+    position: fixed;
+    z-index: 100;
+    top: 40px;
+    left: 40px;
+    border-radius: 100%;
+    border: 3px solid #000;
+
+    object-fit: none;
+    overflow: hidden;
+    padding: 10px;
+    background-color: #fff;
+}
+
+.btnCerrar{
+    position: fixed;
+    z-index: 100;
+
+    top: 40px;
+    right: 40px;
+}

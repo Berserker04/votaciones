@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\VoteController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,6 +21,7 @@ Route::get('/', function () {
 
 Route::post('votacion', [VoteController::class, "index"])->name('voto.login');
 Route::resource('voto', VoteController::class);
+Route::resource('admin', AdminController::class);
 
 Auth::routes();
 

@@ -6,6 +6,7 @@ use App\Models\User;
 use App\Models\Vote;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class VoteController extends Controller
 {
@@ -16,6 +17,7 @@ class VoteController extends Controller
      */
     public function index(Request $request)
     {
+
         $name = $request->get("name");
         $email = $request->get("email");
         if (isset($name) and isset($email)) {
@@ -30,15 +32,16 @@ class VoteController extends Controller
             if (count($users) > 0) {
 
                 if ($users[0]["voto"] == "si") {
-                    dd("Nuestro sistema ya registra un boto con este correo.");
+                    Alert::error("Nuestro sistema ya registra un voto con este correo.");
                     return redirect("/");
                 }
                 $id = $users[0]["id"];
             } else {
-                $user = User::created([
+                $user = User::create([
                     "name" => $name,
                     "email" => $email,
-                    "voto" => "no"
+                    "voto" => "no",
+                    "password" => null
                 ]);
 
                 $id = $user["id"];
@@ -72,8 +75,8 @@ class VoteController extends Controller
         // dd($request->get("user_id"));
         $user = User::find($request->get("user_id"));
 
-        if($user->voto == "si"){
-            dd("Nuestro sistema ya registra un boto con este correo.");
+        if ($user->voto == "si") {
+            Alert::error("Nuestro sistema ya registra un voto con este correo.");
             return redirect("/");
         }
 
@@ -83,10 +86,10 @@ class VoteController extends Controller
         $vote->user_id = $request->get("user_id");
         $vote->save();
 
-        
+
         $user->voto = "si";
         $user->save();
-
+        Alert::success("Gracias! por votar");
         return redirect("/");
     }
 
