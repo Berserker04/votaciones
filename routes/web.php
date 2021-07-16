@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VoteController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,6 +17,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::post('votacion', [VoteController::class, "index"])->name('voto.login');
+Route::resource('voto', VoteController::class);
 
 Auth::routes();
 

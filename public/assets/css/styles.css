@@ -1,0 +1,80 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.container-main {
+    height: 100vh;
+    width: 100%;
+    background-image: url("/assets/images/fondo.jpg");
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+
+    margin: 0 auto;
+}
+
+form{
+    width: 80%;
+}
+
+.container-body{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.votacion-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    height: 100vh;
+    background-image: url("/assets/images/fondo.jpg");
+    background-size: cover;
+}
+
+.candidato{
+    border-radius: 100%;
+    margin: 20px;
+}
+
+.candidato:hover{
+    border-radius: 10%;
+    cursor: pointer;
+}
+
+.candidatos-list{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin: 0 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.candidato.parent:hover{
+    background-color:  #ABEBC6;
+    
+}
+
+.votacion-container h2{
+    color: #fff;
+    background-color: #00000090;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+span{
+    font-size: 22px;
+}
